@@ -6,14 +6,17 @@ import java.util.Map;
 
 public class ParamsConverter {
 	
-	public static Map<String, String> convertParamsMapTo(Map<String, String[]> paramsMap {
+	public static Map<String, String> convertParamsMapTo(Map<String, String[]> paramsMap) {
 		Map<String, String> map = new HashMap<>(); 
     	
     	paramsMap.forEach((k, v) -> { 
     		
     		StringBuilder builder = new StringBuilder(); 
+    		
     		Arrays.asList(v).forEach(value -> builder.append(value)); 
-    		paramsMap.put(k, builder.toString());  
+    		
+    		
+    		map.put(k, builder.toString());  
     		
     		
     	});		

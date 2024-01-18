@@ -31,7 +31,7 @@ public class HellowServlet extends HttpServlet {
 		// get요청인 doGet 응답프로그램 찾다가 없으면 404 표시한다. // 톰캣이 리퀘스트랑 리스폰스 만들어서 들고온다?? 그 중간에 필터를 만든다.
 		// 필터를 걸러내는 것을 만들 예정 -> 전체 경로에 필터를 만들 예정(패키지로)
 		
-		*/
+		
 		Map<String, String>paramsMap = ParamsConverter.convertParamsMapTomap(request.getParameterMap());
 		HttpServletRequest httpRequest = (HttpServletRequest) request; // 다운캐스팅 원래 변수명은 httpServeletRequest임
 		//HttpServletResponse httpResponse = (HttpServletResponse) response; // 다운캐스팅 원래 변수명은 httpServeletResponse임
@@ -56,7 +56,21 @@ public class HellowServlet extends HttpServlet {
 		response.getWriter().println("헬로"); // 응답을 줄때 사용되어지는 코드이다.
 		
 		System.out.println("요청이 들어옴!!!");
-	}
+		*/
+		
+		System.out.println(request.getMethod());
+		System.out.println(request.getRequestURL());
+		System.out.println(request.getRequestURI());
+		System.out.println(response.getStatus());
+		
+		response.setContentType("text/plain");
+		
+		System.out.println(response.getContentType());
+		
+		response.getWriter().println("헬로");
+		
+		System.out.println("요청이 들어옴!!!");
+		
 	}
 }
 // 새로 고침을 할 때마다 웹 클라이언트는 새로 요청을 보낸다.
